@@ -1,0 +1,25 @@
+
+  <div fxLayout="row" id="cards" fxLayoutAlign="space-between center">
+    <div fxFlex="25"></div>
+   <div   fxFlex="50">
+    <mat-card >
+      <div fxLayout="column" fxLayoutAlign="center center">
+        <div fxFlex> 
+            <mat-card-title> <a href="{{article.url}}" target="_blank">{{article.title}}</a></mat-card-title> 
+            
+        </div>
+        <div fxFlex>
+          <mat-card-content>
+            <img  src="{{article.urlToImage}}">
+          </mat-card-content>
+        </div>
+        <div fxFlex>
+           
+                <button mat-raised-button [disabled]="article.disable" color="primary" (click)="readLaterOutput(article)">{{article.state}}</button>
+             
+        </div>
+      </div>
+    </mat-card>
+   </div>
+   <div fxFlex="25"></div>
+  </div>

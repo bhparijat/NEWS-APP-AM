@@ -1,0 +1,9 @@
+.fill-remaining-space{
+    flex: 1 1 auto;
+}
+md-toolbar{
+    margin-bottom:0; 
+}
+mat-grid-tile {
+    background: lightblue;
+  }

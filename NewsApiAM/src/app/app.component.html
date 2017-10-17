@@ -1,0 +1,20 @@
+<header>
+<mat-toolbar  color="primary">
+  <span>NewsApp</span>
+  <span class="fill-remaining-space"></span>
+  <span>
+    <button mat-button  (click)="getSavedArticles()">
+      Saved Articles
+    </button>
+    <button mat-button >
+      Home
+    </button>
+    <button mat-button  >
+      Register
+    </button>
+  </span>
+</mat-toolbar>
+</header>
+<body>
+<router-outlet></router-outlet>
+</body>

@@ -1,0 +1,16 @@
+<md-grid-list cols="12" id="grid">
+
+    <button mat-raised-button *ngIf="!gotData" color="accent" id="searchBtn" (click)="onSearch()">
+        Search All Sources
+    </button>
+    <ng-container *ngIf="gotData">
+      <div class="sourceCards">
+          
+              
+                    <my-card  [sources]="sources"  (passIdToSourceComponent)="passIdToSourceComponent($event)">                          
+                        </my-card>
+              
+     
+    </div>
+    </ng-container>
+</md-grid-list>

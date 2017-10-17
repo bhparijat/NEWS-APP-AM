@@ -1,0 +1,14 @@
+.example-container {
+display: flex;
+flex-direction: column;
+}
+
+.example-container > * {
+width: 100%;
+}
+#register{
+ 
+ width: 50%; 
+ margin:auto;
+ margin-top: 17%;
+}

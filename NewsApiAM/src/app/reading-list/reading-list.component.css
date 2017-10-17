@@ -1,0 +1,20 @@
+mat-card{
+    width: 50%;
+    margin: auto;
+    margin-top:2%; 
+}
+/* img{
+    width: 100%;
+    height: 100%;
+} */
+#btnFooterDelete{
+    margin-left: 5%;
+} 
+mat-grid-tile {
+    background: lightblue;
+  }
+#grid-tile-header,#grid-tile-footer{
+background-color: white;
+color:black;
+}
+  

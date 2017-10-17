@@ -1,0 +1,51 @@
+<div class="containerX" id="loginContainer">
+ <form class="form-control"  #loginForm="ngForm" (ngSubmit)='onLoginSubmit(loginForm)'>
+    <div fxLayout="column" fxLayoutAlign="center center">
+    <div>
+  <mat-form-field>
+      <input matInput name="userName" [(ngModel)]="loginUser.name" placeholder="user name" required>
+  </mat-form-field> 
+</div>
+  <div >
+  <mat-form-field>
+      <input matInput type="password" name="password" [(ngModel)]="loginUser.password" placeholder="password" required>
+  </mat-form-field> 
+ </div>
+ <div >
+   
+    <button mat-raised-button type="submit" color="accent">login</button>
+    
+   </div>
+ </div>
+ </form>
+</div>
+ <div *ngIf="failedToLogIn">try again</div>
+
+<!-- <div id="register">
+  
+    <form class="form-control"  #registerForm="ngForm" (ngSubmit)='onSubmit(registerForm)'>
+      
+    
+      <mat-form-field>
+        <input matInput  name="name" [(ngModel)]="registerUser.name" placeholder="name">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput name="email" [(ngModel)]="registerUser.email" placeholder="email">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput  #phoneNumebr name="phoneNumber" [(ngModel)]="registerUser.phoneNumber" placeholder="phone number">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput #password name="password" [(ngModel)]="registerUser.password" placeholder="password">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput #confirmPassword  name="confirmPassword" [(ngModel)]="registerUser.confirmPassword" placeholder="confirm password">
+      </mat-form-field>
+      <mat-form-field>
+      <button mat-raised-button type="submit">submit</button>
+    </mat-form-field>
+    </form>
+    
+  </div> -->
+  
+  

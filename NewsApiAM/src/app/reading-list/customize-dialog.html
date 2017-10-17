@@ -1,0 +1,32 @@
+
+<!-- <mat-toolbar color="primary"> {{data.title}}</mat-toolbar>   -->
+<md-grid-list cols="1" rowHeight="4:4"> 
+  <md-grid-tile id="headingDialog" >
+      
+     <h3 mat-dialog-title>
+        {{data.title}}
+     </h3>
+     <hr>
+   </md-grid-tile>
+  <!-- <md-grid-tile cols="1">  
+  
+   </md-grid-tile> -->
+
+  <md-grid-tile >
+    <div mat-dialog-content>
+      <mat-form-field mat-placeholder="Description">
+        <label><b>Description &nbsp;:</b></label>
+            <textarea rows="5" id="example-full-width" matInput  [(ngModel)]="data.description" placeholder="Textarea">
+                    {{data.description}}
+            </textarea>
+      </mat-form-field>
+    </div>
+  </md-grid-tile>  
+  <md-grid-tile >
+    <div mat-dialog-actions>
+      <button mat-raised-button color="warn" (click)='onNoClick()'>Close</button>
+      <button mat-raised-button color="accent" [mat-dialog-close]="data.description">Save</button>
+    </div>
+  </md-grid-tile>  
+</md-grid-list>   
+  

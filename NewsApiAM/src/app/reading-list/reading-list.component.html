@@ -1,0 +1,49 @@
+<mat-card class="example-card" *ngFor="let article of savedArticles" >
+ 
+  <mat-grid-list cols="2" rowHeight="4:3">
+     
+      <!-- <mat-card-title-group>
+         
+            <img mat-card-sm-image src="{{article.urlToImage}}" alt="image">
+            
+      </mat-card-title-group> -->
+    
+      <mat-grid-tile >
+          <img mat-card-mat-image src="{{article.urlToImage}}" alt="image">
+      </mat-grid-tile>
+      <mat-grid-tile >
+          <mat-grid-tile-header id="grid-tile-header">
+            <b>{{article.title}}</b>
+            </mat-grid-tile-header>
+            <mat-list>
+                <mat-list-item>
+                    <label><b>Author :</b></label>
+                </mat-list-item>
+              <mat-list-item>
+                 
+                {{article.author}}
+              </mat-list-item>
+              <mat-divider></mat-divider>
+              <mat-list-item>
+                  <label><b>description :</b></label>
+              </mat-list-item>
+            <mat-list-item>
+               
+              {{article.description}}
+            </mat-list-item>
+            </mat-list>
+            <mat-grid-tile-footer id="grid-tile-footer">
+                <button id="btnFooterSave" mat-raised-button color="warn" (click)="deleteArticle(article)">Delete</button>
+                <button id="btnFooterDelete" mat-raised-button color="accent" (click)='getTextToModal(article)'>Customize</button>
+              
+              </mat-grid-tile-footer>
+      </mat-grid-tile>
+</mat-grid-list>
+<!-- <mat-card-actions >
+    
+      <button mat-raised-button color="warn" (click)="deleteArticle(article)">Delete</button>
+      <button mat-raised-button color="accent" (click)='getTextToModal(article)'>Customize</button>
+    
+</mat-card-actions> -->
+</mat-card>
+
