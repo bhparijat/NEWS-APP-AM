@@ -22,4 +22,13 @@ export class AppComponent {
   getSavedArticles(){
     this.router.navigate(['/readingList'])
   }
+  goToRegister(){
+    this.router.navigate(['/register'])
+  }
+  goToDashboard(){
+    this.router.navigate(['/dashboard'])
+  }
+  goToLogin(){
+    this.router.navigate(['/login'])
+  }
 }

@@ -1,4 +1,5 @@
 <header>
+  <div fxLayout='row' fxLayoutAlign='center center'>
 <mat-toolbar  color="primary">
   <span>NewsApp</span>
   <span class="fill-remaining-space"></span>
@@ -6,14 +7,24 @@
     <button mat-button  (click)="getSavedArticles()">
       Saved Articles
     </button>
-    <button mat-button >
+  </span>
+    <span>
+    <button mat-button (click)='goToDashboard()'>
       Home
     </button>
-    <button mat-button  >
+    </span>
+    <span>
+    <button mat-button  (click)='goToRegister()'>
       Register
     </button>
+    </span>
+  <span>
+    <button mat-button  (click)='goToLogin()'>
+       Login
+      </button>
   </span>
 </mat-toolbar>
+</div>
 </header>
 <body>
 <router-outlet></router-outlet>

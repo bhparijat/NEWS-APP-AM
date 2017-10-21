@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MatFormFieldModule} from '@angular/material';
-import {MatInputModule} from '@angular/material';
+import { MatInputModule, MatSnackBar } from '@angular/material';
 import { SaveDataService } from '../save-data.service';
 import { Router } from '@angular/router';
 
@@ -19,7 +19,8 @@ export class RegisterComponent implements OnInit {
   }
   constructor(
     private router:Router,
-    private saveDataService:SaveDataService
+    private saveDataService:SaveDataService,
+    private snackbar:MatSnackBar
   ) { }
 
   ngOnInit() {
@@ -41,14 +42,28 @@ export class RegisterComponent implements OnInit {
    this.registerUser.email = form.controls['email'].value;
    this.registerUser.contact = form.controls['phoneNumber'].value;
    this.registerUser.password = form.controls['password'].value;
-   this.saveDataService.submitUser(this.registerUser)
-     .subscribe(res=>{
-       console.log('here in response',res.json());
-       if(res){
-         this.router.navigate(['/login']);
-       }
-     })
+   this.registerUser.confirmPassword = form.controls['confirmPassword'].value;
+   if(this.registerUser.confirmPassword !== this.registerUser.password){
+    this.snackbar.open(
+      'password and confirm password did not match please try again!',
+      'undo',
+      {
+        duration:9000
+      }
+    )
+   }
+   else{
+        this.saveDataService.submitUser(this.registerUser)
+          .subscribe(res=>{
+            console.log('here in response',res.json());
+            if(res){
+              this.router.navigate(['/login']);
+            }
+          })
+    }
   
  }
-
+goToLogIn(){
+  this.router.navigate(['/login']);
+}
 }

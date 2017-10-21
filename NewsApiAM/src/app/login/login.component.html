@@ -1,4 +1,5 @@
 <div class="containerX" id="loginContainer">
+    <!-- <div *ngIf="failedToLogIn"><h3>Either Username or password is incorrect.Try again</h3></div> -->
  <form class="form-control"  #loginForm="ngForm" (ngSubmit)='onLoginSubmit(loginForm)'>
     <div fxLayout="column" fxLayoutAlign="center center">
     <div>
@@ -14,38 +15,15 @@
  <div >
    
     <button mat-raised-button type="submit" color="accent">login</button>
+    <button mat-raised-button type="button" color="accent" (click)='goToRegister()'>Register</button>
     
    </div>
  </div>
  </form>
 </div>
- <div *ngIf="failedToLogIn">try again</div>
 
-<!-- <div id="register">
-  
-    <form class="form-control"  #registerForm="ngForm" (ngSubmit)='onSubmit(registerForm)'>
-      
-    
-      <mat-form-field>
-        <input matInput  name="name" [(ngModel)]="registerUser.name" placeholder="name">
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput name="email" [(ngModel)]="registerUser.email" placeholder="email">
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput  #phoneNumebr name="phoneNumber" [(ngModel)]="registerUser.phoneNumber" placeholder="phone number">
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput #password name="password" [(ngModel)]="registerUser.password" placeholder="password">
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput #confirmPassword  name="confirmPassword" [(ngModel)]="registerUser.confirmPassword" placeholder="confirm password">
-      </mat-form-field>
-      <mat-form-field>
-      <button mat-raised-button type="submit">submit</button>
-    </mat-form-field>
-    </form>
-    
-  </div> -->
+ 
+
+
   
   

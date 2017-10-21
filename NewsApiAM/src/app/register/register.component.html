@@ -1,27 +1,41 @@
-<div id="register">
 
+<div class="containerX">
   <form class="form-control"  #registerForm="ngForm" (ngSubmit)='onSubmit(registerForm)'>
-    
-  
-    <mat-form-field>
-      <input matInput  name="name" [(ngModel)]="registerUser.name" placeholder="name" required>
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput name="email" [(ngModel)]="registerUser.email" placeholder="email">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput  #phoneNumebr name="phoneNumber" [(ngModel)]="registerUser.phoneNumber" placeholder="phone number">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput #password name="password" [(ngModel)]="registerUser.password" placeholder="password">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput #confirmPassword  name="confirmPassword" [(ngModel)]="registerUser.confirmPassword" placeholder="confirm password">
-    </mat-form-field>
-    
-    <button mat-raised-button type="submit">submit</button>
- 
+        
+    <div fxLayout="column" fxLayoutAlign="center center">
+     <div>
+        <mat-form-field>
+            <input matInput  name="name" [(ngModel)]="registerUser.name" placeholder="name" required>
+          </mat-form-field>
+     </div>
+     <div>
+        <mat-form-field>
+            <input matInput name="email" [(ngModel)]="registerUser.email" placeholder="email" required>
+          </mat-form-field>
+     </div>
+     <div>
+        <mat-form-field>
+            <input matInput  #phoneNumebr name="phoneNumber" [(ngModel)]="registerUser.phoneNumber" placeholder="phone number" required>
+          </mat-form-field>
+     </div>
+     <div>
+        <mat-form-field>
+            <input matInput #password name="password" [(ngModel)]="registerUser.password" placeholder="password" required>
+          </mat-form-field>
+     </div>
+     <div>
+        <mat-form-field>
+            <input matInput #confirmPassword  name="confirmPassword" [(ngModel)]="registerUser.confirmPassword" placeholder="confirm password" required>
+          </mat-form-field>
+     </div>
+     <div>
+        <button mat-raised-button type="submit" id="registerBtn" color='primary'>Register</button>
+     </div>
+     <div>
+        <button mat-raised-button type="button" color='accent' (click)='goToLogin()'>Already Registered? Login</button>
+        
+     </div>
+    </div>
   </form>
-  
 </div>
 

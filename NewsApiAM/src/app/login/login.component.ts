@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {MatFormFieldModule} from '@angular/material';
-import {MatInputModule} from '@angular/material';
+import {MatInputModule,MatSnackBar} from '@angular/material';
 import { Router } from '@angular/router';
 import { SaveDataService } from '../save-data.service';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -13,10 +14,11 @@ export class LoginComponent implements OnInit {
     username:String,
     password:String
   }
-  failedTologIn;
+  failedToLogIn;
   constructor(
     private router:Router,
-    private saveDataService:SaveDataService
+    private saveDataService:SaveDataService,
+    private snackBar:MatSnackBar
   ) { }
 
   ngOnInit() {
@@ -24,7 +26,8 @@ export class LoginComponent implements OnInit {
       username:'', 
       password:''
     };
-    this.failedTologIn=false;
+    this.failedToLogIn=false;
+    console.log('initialized',this.failedToLogIn);
   }
   onLoginSubmit(form){
     console.log(form.controls['userName'].value);
@@ -33,13 +36,23 @@ export class LoginComponent implements OnInit {
     this.loginUser.password  = form.controls['password'].value;
     this.saveDataService.verifyUser(this.loginUser)
     .subscribe(res=>{
-        if(res.status == 200){
-          console.log(res.status);
-          this.router.navigate(['/dashboard']);
+      console.log(res);
+      let id=res['_body'];
+      console.log('id is ',id);
+        if(id.length!==0){
+          console.log('found response',res);
+          let url='/dashboard/'+String(id);
+          this.router.navigate([url]);
         }else{
-          this.failedTologIn=true;
+          console.log('cound not find response',res)
+          this.failedToLogIn=true;
+          console.log('initialized changed',this.failedToLogIn);
+          let msg = 'Either Username or password is incorrect.Try again';
+          this.snackBar.open(msg,'undo',{duration:5000});
         }
     });
   }
-
+ goToRegister(){
+   this.router.navigate(['/register']);
+ }
 }

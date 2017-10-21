@@ -17,7 +17,7 @@ import { DemoComponent } from './all-sources/demo.component';
 import { ArticleCardComponent } from './articles/article-card/article-card.component';
 import { SaveDataService } from './save-data.service';
 import { ReadingListComponent, DialogOverviewExampleDialogComponent } from './reading-list/reading-list.component';
-import { MatDialogModule, MatListModule, MAT_PLACEHOLDER_GLOBAL_OPTIONS, MatFormFieldModule, MatInputModule } from '@angular/material';
+import { MatDialogModule, MatListModule, MAT_PLACEHOLDER_GLOBAL_OPTIONS, MatFormFieldModule, MatInputModule, MatSnackBarModule, MatChipsModule } from '@angular/material';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
@@ -33,7 +33,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     ReadingListComponent,
     DialogOverviewExampleDialogComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -48,6 +49,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatFormFieldModule,
     MatInputModule,
     FlexLayoutModule,
+    MatSnackBarModule,
+    MatChipsModule,
     RouterModule.forRoot([
      {
        path:'login',
@@ -71,7 +74,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
        component:RegisterComponent
      },
      {
-       path:'dashboard',
+       path:'dashboard/:user',
        component:AllSourcesComponent
      }
     ])

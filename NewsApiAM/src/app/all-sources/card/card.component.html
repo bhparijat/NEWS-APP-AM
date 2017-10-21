@@ -1,12 +1,12 @@
 
 
-   <md-grid-list cols="8" rowHeight="4:1">
-        <md-grid-tile *ngFor="let source of sources">
-            <a md-button (click)='viewArticlesForSource(source.id)' >
+   <mat-chip-list >
+        <mat-chip *ngFor="let source of sources"  >
+            <a mat-button (click)='viewArticlesForSource(source.id)' >
                    {{source.name}}
             </a>
-        </md-grid-tile> 
-    </md-grid-list>
+        </mat-chip> 
+    </mat-chip-list>
       
        
 

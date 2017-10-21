@@ -43,7 +43,7 @@ function setRoutes(app){
         next();
       });
    app.use('/',require(path.join(__dirname, './newsApi')));
-  // app.use('/',require(path.join(__dirname, './users')));
+   app.use('/',require(path.join(__dirname, './users')));
     app.use(function(req, res, next) {
         var err = new Error('Resource not found');
         err.status = 404;
@@ -87,12 +87,12 @@ function initializepassport(app){
   });
   return app;
 }
-//createConnection();
+createConnection();
 let app=createApp();
-//app = initializepassport(app);
+app = initializepassport(app);
 app=setupStaticRoutes(app);  
 app=setupMiddlewares(app);
 app=setRoutes(app);
 
-setMongooseConnections();
+//setMongooseConnections();
 app.listen(4200);
