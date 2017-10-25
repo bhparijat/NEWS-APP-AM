@@ -8,7 +8,7 @@ const insertData =function(req,callback){
     const contact=req.body.contact;
     const password=Buffer.from(req.body.password,"utf8");
     const param=[username,email,contact,password];
-    const client = new dse.Client({ contactPoints: ['127.0.0.1'], protocolOptions: { maxVersion:4 }
+    const client = new dse.Client({ contactPoints: ['172.23.238.168'], protocolOptions: { maxVersion:4 }
     ,keyspace:'user_database'});
     const insertQuery = `insert into users ("username","email","contact","password") values(?,?,?,?)`;
 
@@ -28,7 +28,7 @@ const insertData =function(req,callback){
 const sendDataById=function(user,callback){
     const params=[user.username];
     console.log('inside sendData by Id',params);
-    const client = new dse.Client({ contactPoints: ['127.0.0.1'], protocolOptions: { maxVersion:4 }
+    const client = new dse.Client({ contactPoints: ['172.23.238.168'], protocolOptions: { maxVersion:4 }
     ,keyspace:'user_database'});
     const selectQuery=`select username,email,contact,password from user_database.users where username = ?`;
     client.execute(selectQuery, params ,function(err, result) {

@@ -1,6 +1,6 @@
 const dse = require('dse-driver');
 const async=require('async');
-const client = new dse.Client({ contactPoints: ['127.0.0.1'], protocolOptions: { maxVersion:4 }
+const client = new dse.Client({ contactPoints: ['172.23.238.168'], protocolOptions: { maxVersion:4 }
 });
 
 const createKeyspaceQuery=`CREATE KEYSPACE user_database WITH REPLICATION = {'class': 'SimpleStrategy', 'replication_factor': '1'}`
