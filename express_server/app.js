@@ -9,7 +9,7 @@ function setMongooseConnections()
 {
 
   const mongoose = require('mongoose');
-  const connect = mongoose.connect('mongodb://localhost/newsAppDataBase',{
+  const connect = mongoose.connect('mongodb://mongo/newsAppDataBase',{
     useMongoClient:true,
   });
   const db = mongoose.connection;
@@ -43,7 +43,7 @@ function setRoutes(app){
         next();
       });
    app.use('/',require(path.join(__dirname, './newsApi')));
-   app.use('/',require(path.join(__dirname, './users')));
+  app.use('/',require(path.join(__dirname, './users')));
     app.use(function(req, res, next) {
         var err = new Error('Resource not found');
         err.status = 404;
