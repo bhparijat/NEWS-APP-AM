@@ -94,5 +94,5 @@ app=setupStaticRoutes(app);
 app=setupMiddlewares(app);
 app=setRoutes(app);
 
-//setMongooseConnections();
+setMongooseConnections();
 app.listen(4200);

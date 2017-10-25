@@ -37,7 +37,7 @@ export class SaveDataService{
   }
   submitUser(user){
     let url=`
-    http://172.23.238.168:4200/users/
+    http://localhost:4200/users/
     `
       return this.http.post(url,user)
   }
